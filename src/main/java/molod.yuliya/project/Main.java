@@ -12,7 +12,7 @@ public class Main {
 
     /** The main function with the execution of class methods
      * @param args string[] args*/
-    public static void main(String[] args) throws InterruptedException {
+    public static void main(String[] args) {
 
         int conteiner_size = 0, elements = 0, action, index;
         String InputData = "";
@@ -81,13 +81,7 @@ public class Main {
                     System.out.println(Arrays.toString(List.Element));
                 }
                 case (6) -> {
-                    do {
-                        System.out.print("Removing the element number: ");
-                        conteiner_size = text.nextInt();
-                        if (conteiner_size > List.Size() || conteiner_size < 0) {
-                            System.out.print("Enter correct number from 1 to " + List.Size() + "\n");
-                        }
-                    } while (conteiner_size > List.Size() || conteiner_size < 0);
+                    conteiner_size = Validation(text, 1,List.Size(),"Removing the element number: ", "Enter correct number from 1 to " + List.Size());
                     List.DeleteByNumber(conteiner_size);
                     System.out.print("New list: ");
                     System.out.println(Arrays.toString(List.Element));
