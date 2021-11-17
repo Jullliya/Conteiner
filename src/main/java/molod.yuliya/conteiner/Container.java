@@ -126,14 +126,14 @@ public class Container {
      */
     public void DeleteByNumber (int NumberElement) {
         if(ListSize!=0) {
-            if (NumberElement <= ListSize - 1) {
+            if (NumberElement <= ListSize ) {
                 ListSize--;
                 int[] TemporaryArray = new int[ListSize];
-                for (int iterator = 0; iterator < NumberElement - 1; iterator++) {
+                for (int iterator = 0; iterator < NumberElement-1; iterator++) {
                     TemporaryArray[iterator] = Element[iterator];
                 }
-                for (int iterator = NumberElement - 1; iterator < ListSize+1; iterator++) {
-                    TemporaryArray[iterator-1] = Element[iterator];
+                for (int iterator = NumberElement-1; iterator < ListSize; iterator++) {
+                    TemporaryArray[iterator] = Element[iterator+1];
                 }
                 Element = TemporaryArray;
             }
